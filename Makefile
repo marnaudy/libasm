@@ -4,7 +4,8 @@ HEADER		=	libasm.h
 
 SRCS        =   ft_strlen.asm \
 				ft_strcpy.asm \
-				ft_write.asm
+				ft_write.asm \
+				ft_read.asm
 
 OBJS        =   ${SRCS:.asm=.o}
 
