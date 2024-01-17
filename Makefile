@@ -2,7 +2,8 @@ NAME        =   libasm.a
 
 HEADER		=	libasm.h
 
-SRCS        =   ft_strlen.asm
+SRCS        =   ft_strlen.asm \
+				ft_strcpy.asm
 
 OBJS        =   ${SRCS:.asm=.o}
 
