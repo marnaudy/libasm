@@ -4,10 +4,14 @@
 ; str in rdi
 ; return in rax
 
-section    .text
-global     ft_strlen
+section     .text
+global      ft_strlen
+extern      __errno_location
 
 ft_strlen:
+    ; Check if rdi is NULL, if it is return 0
+    cmp     rdi, 0
+    jz      ret_error
     ; Push rbx on stack
     push    rbx
     ; Move str to rax and rbx
@@ -29,4 +33,11 @@ finished:
     sub     rax, rbx
     ; Restore rbx
     pop     rbx
+    ret
+
+ret_error:
+    ; Set errno to EFAULT (14)
+    call    __errno_location wrt ..plt
+    mov     dword [rax], 14
+    mov     rax, 0
     ret

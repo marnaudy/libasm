@@ -11,7 +11,11 @@ OBJS        =   ${SRCS:.asm=.o}
 
 TEST_NAME   =   test
 
-TEST_SRCS   =   test.c
+TEST_HEADER =	test.h
+
+TEST_SRCS   =   test_utils.c \
+				test_strlen.c \
+				test.c
 
 TEST_OBJS   =   ${TEST_SRCS:.c=.o}
 
@@ -37,7 +41,7 @@ ${NAME}:    ${OBJS}
 %.o:		%.asm
 			${ASM} ${ASM_FLAGS} $< -o ${<:.asm=.o}
 
-%.o:		%.c ${HEADER}
+%.o:		%.c ${HEADER} ${TEST_HEADER}
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 test:       ${NAME} ${TEST_OBJS}
