@@ -2,13 +2,14 @@
 
 void test_strlen() {
     puts("----- Testing strlen");
-    test_int(1, ft_strlen(""), strlen(""));
-    test_int(2, ft_strlen("Hello"), strlen("Hello"));
-    test_int(3, ft_strlen("0"), strlen("0"));
+    int test_nbr = 1;
+    test_int(&test_nbr, ft_strlen(""), strlen(""));
+    test_int(&test_nbr, ft_strlen("Hello"), strlen("Hello"));
+    test_int(&test_nbr, ft_strlen("0"), strlen("0"));
     char s[2];
     s[0] = 1;
     s[1] = 0;
-    test_int(4, ft_strlen(s), strlen(s));
-    test_int(5, ft_strlen(NULL), 0);
-    test_int(6, errno, EFAULT);
+    test_int(&test_nbr, ft_strlen(s), strlen(s));
+    test_int(&test_nbr, ft_strlen(NULL), 0);
+    test_int(&test_nbr, errno, EFAULT);
 }
