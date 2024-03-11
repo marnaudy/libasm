@@ -1,5 +1,4 @@
 #include "test.h"
-#include <string.h>
 
 void test_strlen() {
     puts("----- Testing strlen");

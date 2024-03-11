@@ -2,20 +2,23 @@ NAME        =   libasm.a
 
 HEADER		=	libasm.h
 
-SRCS        =   ft_strlen.asm \
-				ft_strcpy.asm \
-				ft_write.asm \
-				ft_read.asm
+SRCS        =   src/ft_strlen.asm \
+				src/ft_strcpy.asm \
+				src/ft_write.asm \
+				src/ft_read.asm
 
 OBJS        =   ${SRCS:.asm=.o}
 
 TEST_NAME   =   test
 
-TEST_HEADER =	test.h
+TEST_HEADER =	test_src/test.h
 
-TEST_SRCS   =   test_utils.c \
-				test_strlen.c \
-				test.c
+TEST_DIR	=	test_src
+
+TEST_SRCS   =   test_src/test_utils.c \
+				test_src/test_strlen.c \
+				test_src/test_strcpy.c \
+				test_src/test.c
 
 TEST_OBJS   =   ${TEST_SRCS:.c=.o}
 
@@ -25,7 +28,7 @@ ASM_FLAGS   =   -f elf64
 
 CC          =   gcc
 
-CFLAGS      =   -Wall -Wextra -Werror
+CFLAGS      =   -Wall -Wextra -Werror -Wno-restrict
 
 RM          =   rm -f
 
@@ -42,7 +45,7 @@ ${NAME}:    ${OBJS}
 			${ASM} ${ASM_FLAGS} $< -o ${<:.asm=.o}
 
 %.o:		%.c ${HEADER} ${TEST_HEADER}
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+			${CC} ${CFLAGS} -I. -c $< -o ${<:.c=.o}
 
 test:       ${NAME} ${TEST_OBJS}
 			${CC} ${CFLAGS} ${TEST_OBJS} ${NAME} -o ${TEST_NAME}
