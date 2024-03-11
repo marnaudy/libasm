@@ -6,4 +6,5 @@ int main() {
     test_strlen();
     test_strcpy();
     test_strcmp();
+    test_strdup();
 }

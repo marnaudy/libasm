@@ -7,8 +7,8 @@
 ; count in rdx
 ; return in rax
 
-section    .text
-global     ft_write
+section     .text
+global      ft_write
 
 ft_write:
     ; Call write syscall 0x01

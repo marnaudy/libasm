@@ -5,8 +5,8 @@
 ; s2 in rsi
 ; return difference in rax
 
-section    .text
-global     ft_strcmp
+section     .text
+global      ft_strcmp
 
 ft_strcmp:
 next_char:

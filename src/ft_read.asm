@@ -7,8 +7,8 @@
 ; count in rdx
 ; return in rax
 
-section    .text
-global     ft_read
+section     .text
+global      ft_read
 
 ft_read:
     ; Call read syscall 0x00

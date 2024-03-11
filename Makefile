@@ -6,7 +6,8 @@ SRCS        =   src/ft_strlen.asm \
 				src/ft_strcpy.asm \
 				src/ft_strcmp.asm \
 				src/ft_write.asm \
-				src/ft_read.asm
+				src/ft_read.asm \
+				src/ft_strdup.asm
 
 OBJS        =   ${SRCS:.asm=.o}
 
@@ -20,6 +21,7 @@ TEST_SRCS   =   test_src/test_utils.c \
 				test_src/test_strlen.c \
 				test_src/test_strcpy.c \
 				test_src/test_strcmp.c \
+				test_src/test_strdup.c \
 				test_src/test.c
 
 TEST_OBJS   =   ${TEST_SRCS:.c=.o}

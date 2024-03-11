@@ -1,7 +1,5 @@
 #include "test.h"
 
-#define STR_SIZE 100
-
 void test_strcmp() {
     puts("----- Testing strcmp");
     int test_nbr = 1;

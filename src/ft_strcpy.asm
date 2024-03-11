@@ -6,8 +6,8 @@
 ; src in rsi
 ; return dest in rax
 
-section    .text
-global     ft_strcpy
+section     .text
+global      ft_strcpy
 
 ft_strcpy:
     ; Move dest to rax
