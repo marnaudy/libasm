@@ -35,8 +35,7 @@ ft_strdup:
     ret
 
 malloc_error:
-    ; Set errno to ENOMEM (althoug malloc should have done this already)
+    ; Malloc has already set errno to ENOMEM
     ; Return NULL
-    mov     rax, 0
     pop     rbx
     ret

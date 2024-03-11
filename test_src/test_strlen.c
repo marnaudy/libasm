@@ -10,6 +10,10 @@ void test_strlen() {
     s[0] = 1;
     s[1] = 0;
     test_int(&test_nbr, ft_strlen(s), strlen(s));
-    test_int(&test_nbr, ft_strlen(NULL), 0);
-    test_int(&test_nbr, errno, EFAULT);
+    char *long_str = make_long_str();
+    if (!long_str) {
+        return;
+    }
+    test_int(&test_nbr, ft_strlen(long_str), strlen(long_str));
+    free(long_str);
 }

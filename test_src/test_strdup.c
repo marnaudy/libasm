@@ -10,4 +10,32 @@ void test_strdup() {
     dest = ft_strdup(src);
     test_str(&test_nbr, dest, src);
     free(dest);
+
+    //Empty test
+    src = "";
+    dest = ft_strdup(src);
+    test_str(&test_nbr, dest, src);
+    free(dest);
+
+    //Long test
+    char *long_str = make_long_str();
+    if (!long_str) {
+        return;
+    }
+    src = long_str;
+    dest = ft_strdup(src);
+    test_str(&test_nbr, dest, src);
+    test_ptr(&test_nbr, src, long_str);
+    free(dest);
+
+    //Long test with malloc fail
+    set_low_memory_limits();
+    src = long_str;
+    dest = ft_strdup(src);
+    set_normal_memory_limits();
+    test_ptr(&test_nbr, dest, NULL);
+    test_int(&test_nbr, errno, ENOMEM);
+    test_ptr(&test_nbr, src, long_str);
+    free(dest);
+    free(long_str);
 }

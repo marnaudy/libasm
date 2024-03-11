@@ -9,27 +9,24 @@ section     .text
 global      ft_strcmp
 
 ft_strcmp:
-next_char:
     ; Check if byte at rdi (s1) is null (end of string)
     cmp     byte [rdi], 0
     ; If null jump to end
     jz      finished
-    ; Compare string byte at rdi and rsi also increments rdi and rsi which we reverse
-    cmpsb
-    dec     rdi
-    dec     rsi
+    ; Move bytes at rdi and rsi to al and cl then compare them
+    mov     al, byte [rdi]
+    mov     cl, byte [rsi]
+    cmp     al, cl
     ; If different jump to end
     jnz     finished
     ; Else increment rdi and rsi (s1 and s2) and go to next character
     inc     rdi
     inc     rsi
-    jmp     next_char
+    jmp     ft_strcmp
 
 finished:
     ; Return in rax difference between byte at rdi and rsi
-    mov     rax, 0
-    mov     rcx, 0
-    mov     al, byte [rdi]
-    mov     cl, byte [rsi]
+    movzx   rax, byte [rdi]
+    movzx   rcx, byte [rsi]
     sub     eax, ecx
     ret

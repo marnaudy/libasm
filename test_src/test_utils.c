@@ -26,3 +26,60 @@ void test_ptr(int *test_nbr, void *res, void *expected) {
     }
     (*test_nbr)++;
 }
+
+void set_low_memory_limits() {
+    struct rlimit limit;
+    if (getrlimit(RLIMIT_AS, &limit) < 0) {
+        puts("Getrlimit AS call failed");
+        return;
+    }
+    limit.rlim_cur = 10;
+    if (setrlimit(RLIMIT_AS, &limit) < 0) {
+        puts("Setrlimit AS to low call failed");
+        return;
+    }
+    // if (getrlimit(RLIMIT_DATA, &limit) < 0) {
+    //     puts("Getrlimit DATA call failed");
+    //     return;
+    // }
+    // limit.rlim_cur = 10;
+    // if (setrlimit(RLIMIT_DATA, &limit) < 0) {
+    //     puts("Setrlimit DATA to low call failed");
+    //     return;
+    // }
+}
+
+void set_normal_memory_limits() {
+    struct rlimit limit;
+    if (getrlimit(RLIMIT_AS, &limit) < 0) {
+        puts("Getrlimit AS call failed");
+        return;
+    }
+    limit.rlim_cur = 10000000;
+    if (setrlimit(RLIMIT_AS, &limit) < 0) {
+        puts("Setrlimit AS to normal call failed");
+        return;
+    }
+    // if (getrlimit(RLIMIT_DATA, &limit) < 0) {
+    //     puts("Getrlimit DATA call failed");
+    //     return;
+    // }
+    // limit.rlim_cur = 10000000;
+    // if (setrlimit(RLIMIT_DATA, &limit) < 0) {
+    //     puts("Setrlimit DATA to normal call failed");
+    //     return;
+    // }
+}
+
+char *make_long_str() {
+    char *str = malloc(LONG_STR_SIZE);
+    if (!str) {
+        puts("Malloc failed to allocate long string");
+        return NULL;
+    }
+    for (int i = 0; i < LONG_STR_SIZE - 1; i++) {
+        str[i] = i % 10 + '0';
+    }
+    str[LONG_STR_SIZE - 1] = 0;
+    return str;
+}

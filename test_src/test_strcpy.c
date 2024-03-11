@@ -39,6 +39,19 @@ void test_strcpy() {
     test_str(&test_nbr, dest, src);
     test_ptr(&test_nbr, ret, dest);
 
+    //Test very long string
+    char *long_src = make_long_str();
+    char *long_dest = malloc(LONG_STR_SIZE);
+    if (!long_src || !long_dest) {
+        puts("Error mallocing long string");
+        return;
+    }
+    ret = ft_strcpy(long_dest, long_src);
+    test_str(&test_nbr, long_dest, long_src);
+    test_ptr(&test_nbr, ret, long_dest);
+    free(long_src);
+    free(long_dest);
+
     //Test with overlap
     strcpy(dest, "Hello world");
     strcpy(dest2, "Hello world");

@@ -6,10 +6,18 @@
 #include <errno.h>
 #include <stdio.h>
 #include <string.h>
+#include <sys/time.h>
+#include <sys/resource.h>
+#include <malloc.h>
+
+#define LONG_STR_SIZE 10000
 
 void    test_int(int *test_nbr, int res, int expected);
 void    test_str(int *test_nbr, char *res, char *expected);
 void    test_ptr(int *test_nbr, void *res, void *expected);
+void    set_low_memory_limits();
+void    set_normal_memory_limits();
+char    *make_long_str();
 void    test_strlen();
 void    test_strcpy();
 void    test_strcmp();
