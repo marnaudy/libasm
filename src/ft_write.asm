@@ -15,9 +15,10 @@ ft_write:
     ; Call write syscall 0x01
     mov     rax, 0x01
     syscall
-    ; Check if return (rax) is strictly negative
-    cmp     rax, 0x00
-    js      error
+    ; Check if return (rax) indicates an error (between -4095 and -1)
+    cmp     rax, -0xFFF
+    ; Jump above or equal -4095
+    jae     error
     ret
 error:
     ; Set errno to 0 - rax

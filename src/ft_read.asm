@@ -15,9 +15,10 @@ ft_read:
     ; Call read syscall 0x00
     mov     rax, 0x00
     syscall
-    ; Check if return (rax) is strictly negative
-    cmp     rax, 0x00
-    js      error
+    ; Check if return (rax) indicates an error (between -4095 and -1)
+    cmp     rax, -0xFFF
+    ; Jump above or equal -4095
+    jae     error
     ret
 error:
     ; Set errno to 0 - eax
@@ -27,5 +28,5 @@ error:
     pop     rcx
     mov     dword [rax], ecx
     ; Return -1
-    mov     eax, 0x-1
+    mov     eax, -1
     ret 
