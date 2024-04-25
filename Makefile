@@ -22,6 +22,8 @@ TEST_SRCS   =   test_src/test_utils.c \
 				test_src/test_strcpy.c \
 				test_src/test_strcmp.c \
 				test_src/test_strdup.c \
+				test_src/test_read.c \
+				test_src/test_write.c \
 				test_src/test.c
 
 TEST_OBJS   =   ${TEST_SRCS:.c=.o}

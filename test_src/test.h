@@ -9,8 +9,11 @@
 #include <sys/time.h>
 #include <sys/resource.h>
 #include <malloc.h>
+#include <fcntl.h>
+#include <unistd.h>
 
 #define LONG_STR_SIZE 10000
+#define BUFFER_SIZE 100
 
 void    test_int(int *test_nbr, int res, int expected);
 void    test_str(int *test_nbr, char *res, char *expected);
@@ -22,5 +25,7 @@ void    test_strlen();
 void    test_strcpy();
 void    test_strcmp();
 void    test_strdup();
+void    test_read();
+void    test_write();
 
 #endif
