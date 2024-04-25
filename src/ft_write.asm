@@ -21,9 +21,8 @@ ft_write:
     ret
 error:
     ; Set errno to 0 - rax
-    xor     rcx, rcx
-    sub     rcx, rax
-    push    rcx
+    neg     rax
+    push    rax
     call    __errno_location wrt ..plt
     pop     rcx
     mov     dword [rax], ecx

@@ -11,11 +11,12 @@
 #include <malloc.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <stdbool.h>
 
 #define LONG_STR_SIZE 10000
-#define BUFFER_SIZE 100
 
 void    test_int(int *test_nbr, int res, int expected);
+void    test_char(int *test_nbr, char res, char expected);
 void    test_str(int *test_nbr, char *res, char *expected);
 void    test_ptr(int *test_nbr, void *res, void *expected);
 void    set_low_memory_limits();
@@ -24,7 +25,7 @@ char    *make_long_str();
 void    test_strlen();
 void    test_strcpy();
 void    test_strcmp();
-void    test_strdup();
+void    test_strdup(bool skip_mem_check);
 void    test_read();
 void    test_write();
 

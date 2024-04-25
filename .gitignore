@@ -1,4 +1,5 @@
 test
 libasm.a
+a.out
 *.o
 .vscode

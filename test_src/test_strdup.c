@@ -1,6 +1,6 @@
 #include "test.h"
 
-void test_strdup() {
+void test_strdup(bool skip_mem_check) {
     puts("----- Testing strdup");
     int test_nbr = 1;
     char *src, *dest;
@@ -28,14 +28,16 @@ void test_strdup() {
     test_ptr(&test_nbr, src, long_str);
     free(dest);
 
-    //Long test with malloc fail
-    set_low_memory_limits();
-    src = long_str;
-    dest = ft_strdup(src);
-    set_normal_memory_limits();
-    test_ptr(&test_nbr, dest, NULL);
-    test_int(&test_nbr, errno, ENOMEM);
-    test_ptr(&test_nbr, src, long_str);
-    free(dest);
+    if (!skip_mem_check) {
+        //Long test with malloc fail
+        set_low_memory_limits();
+        src = long_str;
+        dest = ft_strdup(src);
+        set_normal_memory_limits();
+        test_ptr(&test_nbr, dest, NULL);
+        test_int(&test_nbr, errno, ENOMEM);
+        test_ptr(&test_nbr, src, long_str);
+        free(dest);
+    }
     free(long_str);
 }
