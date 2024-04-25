@@ -15,14 +15,14 @@ ft_read:
     ; Call read syscall 0x00
     mov     rax, 0x00
     syscall
-    ; Check if return (eax) is strictly negative
-    cmp     eax, 0x00
+    ; Check if return (rax) is strictly negative
+    cmp     rax, 0x00
     js      error
     ret
 error:
     ; Set errno to 0 - eax
-    xor     ecx, ecx
-    sub     ecx, eax
+    xor     rcx, rcx
+    sub     rcx, rax
     push    rcx
     call    __errno_location wrt ..plt
     pop     rcx
