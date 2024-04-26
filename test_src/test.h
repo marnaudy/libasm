@@ -1,7 +1,7 @@
 #ifndef TEST_H
 #define TEST_H
 
-#include "libasm.h"
+#include "libasm_bonus.h"
 #include <stdlib.h>
 #include <errno.h>
 #include <stdio.h>
@@ -28,5 +28,11 @@ void    test_strcmp();
 void    test_strdup(bool skip_mem_check);
 void    test_read();
 void    test_write();
+void    test_atoi_base();
+void    test_create_elem(bool skip_mem_check);
+void    test_list_push_front(bool skip_mem_check);
+void    test_list_size();
+void    test_list_sort();
+void    test_list_remove_if();
 
 #endif

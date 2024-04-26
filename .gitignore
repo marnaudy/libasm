@@ -1,5 +1,7 @@
 test
+tester
 libasm.a
+libasm_bonus.a
 a.out
 *.o
 .vscode

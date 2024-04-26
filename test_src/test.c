@@ -14,4 +14,10 @@ int main(int argc, char **argv) {
     test_strdup(skip_mem_check);
     test_read();
     test_write();
+    test_atoi_base();
+    test_create_elem(skip_mem_check);
+    test_list_push_front(skip_mem_check);
+    test_list_size();
+    test_list_sort();
+    test_list_remove_if();
 }
