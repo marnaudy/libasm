@@ -8,4 +8,5 @@ section     .text
 global      ft_create_elem
 
 ft_create_elem:
+    xor     rax, rax
     ret

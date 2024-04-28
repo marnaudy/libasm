@@ -54,7 +54,7 @@ ASM_FLAGS	=	-f elf64
 
 CC			=	gcc
 
-CFLAGS		=	-Wall -Wextra -Werror -Wno-restrict
+CFLAGS		=	-Wall -Wextra -Werror -Wno-restrict -g
 
 RM			=	rm -f
 
