@@ -38,6 +38,7 @@ TEST_SRCS	=	test_src/test_utils.c \
 				test_src/test_read.c \
 				test_src/test_write.c \
 				test_src/test_atoi_base.c \
+				test_src/test_list_utils.c \
 				test_src/test_create_elem.c \
 				test_src/test_list_push_front.c \
 				test_src/test_list_size.c \
