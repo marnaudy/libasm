@@ -49,6 +49,7 @@ bool is_in_list(t_list *begin_list, void *data_ref, int (*cmp)()) {
         if ((*cmp)(begin_list->data, data_ref) == 0) {
             return true;
         }
+        begin_list = begin_list->next;
     }
     return false;
 }
