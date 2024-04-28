@@ -33,6 +33,8 @@ t_list  *create_elem(void *data);
 void    list_push_front(t_list **begin_list, void *data);
 bool    list_is_sorted(t_list *begin_list, int (*cmp)());
 bool    is_in_list(t_list *begin_list, void *data_ref, int (*cmp)());
+t_list  *create_list();
+void    free_list(t_list *list_begin);
 void    test_create_elem(bool skip_mem_check);
 void    test_list_push_front(bool skip_mem_check);
 void    test_list_size();
