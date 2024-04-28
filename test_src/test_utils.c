@@ -36,6 +36,17 @@ void test_ptr(int *test_nbr, void *res, void *expected) {
     (*test_nbr)++;
 }
 
+void test_bool(int *test_nbr, bool res, bool expected) {
+    if (res == expected) {
+        printf("Test %d passed\n", *test_nbr);
+    } else {
+        printf("Test %d failed. Res = %s expected %s\n",
+            *test_nbr, res ? "true" : "false",
+            expected ? "true" : "false");
+    }
+    (*test_nbr)++;
+}
+
 void set_low_memory_limits() {
     struct rlimit limit;
     if (getrlimit(RLIMIT_AS, &limit) < 0) {

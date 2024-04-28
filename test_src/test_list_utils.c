@@ -22,6 +22,15 @@ void list_push_front(t_list **begin_list, void *data) {
     *begin_list = new_elem;
 }
 
+int list_size(t_list *begin_list) {
+    int size = 0;
+    while (begin_list) {
+        size++;
+        begin_list = begin_list->next;
+    }
+    return size;
+}
+
 bool list_is_sorted(t_list *begin_list, int (*cmp)()) {
     if (begin_list == NULL) {
         return true;
