@@ -8,4 +8,13 @@ section     .text
 global      ft_list_size
 
 ft_list_size:
+    ;Increment rax while iterating over links
+    xor     rax, rax
+next_elem:
+    cmp     rdi, 0
+    je      return
+    mov     rdi, [rdi]
+    inc     rax
+    jmp     next_elem
+return:
     ret
