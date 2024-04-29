@@ -36,10 +36,11 @@ void    test_list_push_front(bool skip_mem_check) {
         set_low_memory_limits();
         ft_list_push_front(&list_begin, str);
         set_normal_memory_limits();
-        //Check that the list hasn't changed
+        //Check that the list hasn't changed and errno is set
         test_ptr(&test_nbr, list_begin, save_begin);
         test_ptr(&test_nbr, list_begin->data, str);
         test_ptr(&test_nbr, list_begin, save_begin);
+        test_int(&test_nbr, errno, ENOMEM);
     }
     free(list_begin);
 }

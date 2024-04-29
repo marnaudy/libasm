@@ -31,5 +31,6 @@ void    test_create_elem(bool skip_mem_check) {
         new_ptr = ft_create_elem(str);
         set_normal_memory_limits();
         test_ptr(&test_nbr, new_ptr, NULL);
+        test_int(&test_nbr, errno, ENOMEM);
     }
 }
