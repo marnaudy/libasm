@@ -35,6 +35,7 @@ void test_list_remove_if() {
     test_ptr(&test_nbr, list, NULL);
 
     //List size 10 with no match
+    free(list);
     list = create_list();
     save = list;
     ft_list_remove_if(&list, str, &strcmp, &free);
@@ -48,7 +49,7 @@ void test_list_remove_if() {
     
     //List size 10 with two matches
     list_push_front(&list, strdup("4"));
-    ft_list_remove_if(&list, "0", &strcmp, &free);
+    ft_list_remove_if(&list, "4", &strcmp, &free);
     test_int(&test_nbr, list_size(list), 8);
     test_bool(&test_nbr, is_in_list(list, "4", &strcmp), false);
 
