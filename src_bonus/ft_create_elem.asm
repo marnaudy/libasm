@@ -6,7 +6,20 @@
 
 section     .text
 global      ft_create_elem
+extern      malloc
 
 ft_create_elem:
-    xor     rax, rax
+    ;Store data in rbx
+    push    rbx
+    mov     rbx, rdi
+    ;Call malloc with sizeof t_list
+    mov     rdi, 0x10
+    call    malloc wrt ..plt
+    cmp     rax, 0
+    je      return
+    ; Set next to null
+    mov     qword [rax], 0
+    mov     [rax + 8], rbx
+return:
+    pop     rbx
     ret
