@@ -1,7 +1,7 @@
 #include "test.h"
 
 void test_read() {
-    puts("----- Testing read");
+    puts("------------------------- Testing read");
     //Create test read file with known content
     int fd = open("read_test", O_WRONLY | O_CREAT | O_TRUNC, 0644);
     if (fd < 0) {

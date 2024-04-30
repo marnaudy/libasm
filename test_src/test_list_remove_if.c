@@ -7,7 +7,7 @@ int return_zero(void *data1, void *data2) {
 }
 
 void test_list_remove_if() {
-    puts("----- Testing list_remove_if");
+    puts("------------------------- Testing list_remove_if");
     int test_nbr = 1;
     t_list *list = NULL;
     char *str = "test_str";

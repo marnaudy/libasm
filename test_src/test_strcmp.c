@@ -1,7 +1,7 @@
 #include "test.h"
 
 void test_strcmp() {
-    puts("----- Testing strcmp");
+    puts("------------------------- Testing strcmp");
     int test_nbr = 1;
     char *s1, *s2;
 

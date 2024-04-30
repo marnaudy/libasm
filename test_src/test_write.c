@@ -1,7 +1,7 @@
 #include "test.h"
 
 void test_write() {
-    puts("----- Testing write");
+    puts("------------------------- Testing write");
     int read_fd = open("read_test", O_RDONLY | O_CREAT, 0644);
     if (read_fd < 0) {
         puts("Open read_test for read failed");

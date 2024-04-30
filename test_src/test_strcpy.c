@@ -3,7 +3,7 @@
 #define STR_SIZE 100
 
 void test_strcpy() {
-    puts("----- Testing strcpy");
+    puts("------------------------- Testing strcpy");
     char *src, *dest, *dest2, *ret;
     int test_nbr = 1;
     src = malloc(STR_SIZE);

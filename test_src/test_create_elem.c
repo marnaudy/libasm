@@ -1,7 +1,7 @@
 #include "test.h"
 
 void    test_create_elem(bool skip_mem_check) {
-    puts("----- Testing create_elem");
+    puts("------------------------- Testing create_elem");
     int test_nbr = 1;
 
     //Test basic case with null data
@@ -27,6 +27,7 @@ void    test_create_elem(bool skip_mem_check) {
 
     //Test malloc fail
     if (!skip_mem_check) {
+        errno = 0;
         set_low_memory_limits();
         new_ptr = ft_create_elem(str);
         set_normal_memory_limits();

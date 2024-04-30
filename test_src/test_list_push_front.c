@@ -1,7 +1,7 @@
 #include "test.h"
 
 void    test_list_push_front(bool skip_mem_check) {
-    puts("----- Testing list_push_front");
+    puts("------------------------- Testing list_push_front");
     int test_nbr = 1;
     t_list *list_begin = NULL;
     char *str = "Test";
@@ -33,6 +33,7 @@ void    test_list_push_front(bool skip_mem_check) {
 
     //Test malloc fail
     if (!skip_mem_check) {
+        errno = 0;
         set_low_memory_limits();
         ft_list_push_front(&list_begin, str);
         set_normal_memory_limits();

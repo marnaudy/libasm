@@ -1,7 +1,7 @@
 #include "test.h"
 
 void test_strdup(bool skip_mem_check) {
-    puts("----- Testing strdup");
+    puts("------------------------- Testing strdup");
     int test_nbr = 1;
     char *src, *dest;
 

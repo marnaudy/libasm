@@ -1,7 +1,7 @@
 #include "test.h"
 
 void    test_list_size() {
-    puts("----- Testing list_size");
+    puts("------------------------- Testing list_size");
     int test_nbr = 1;
     t_list *list_begin = NULL;
     char *str = "Hello";

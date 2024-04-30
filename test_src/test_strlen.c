@@ -1,7 +1,7 @@
 #include "test.h"
 
 void test_strlen() {
-    puts("----- Testing strlen");
+    puts("------------------------- Testing strlen");
     int test_nbr = 1;
     test_int(&test_nbr, ft_strlen(""), strlen(""));
     test_int(&test_nbr, ft_strlen("Hello"), strlen("Hello"));
