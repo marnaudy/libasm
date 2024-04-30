@@ -23,18 +23,22 @@ void test_write() {
 
     //Incorrect arguments
     //Negative fd
+    errno = 0;
     test_int(&test_nbr, ft_write(-1, long_str, 1), -1);
     test_int(&test_nbr, errno, EBADF);
 
     //Incorrect positive fd
+    errno = 0;
     test_int(&test_nbr, ft_write(20, long_str, 1), -1);
     test_int(&test_nbr, errno, EBADF);
 
     //File opened as read only
+    errno = 0;
     test_int(&test_nbr, ft_write(read_fd, long_str, 1), -1);
     test_int(&test_nbr, errno, EBADF);
 
     //Null buffer
+    errno = 0;
     test_int(&test_nbr, ft_write(write_fd, NULL, 1), -1);
     test_int(&test_nbr, errno, EFAULT);
 

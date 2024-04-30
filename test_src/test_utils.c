@@ -2,7 +2,7 @@
 
 void test_int(int *test_nbr, int res, int expected) {
     if (res == expected) {
-        printf("Test %d passed\n", *test_nbr);
+        printf("Test %2d passed\n", *test_nbr);
     } else {
         printf("Test %d failed. Res = %d expected %d\n", *test_nbr, res, expected);
     }
@@ -19,7 +19,7 @@ void test_sign(int *test_nbr, int res, int expected) {
     int sign_res = get_sign(res);
     int exp_res = get_sign(expected);
     if (sign_res == exp_res) {
-        printf("Test %d passed\n", *test_nbr);
+        printf("Test %2d passed\n", *test_nbr);
     } else {
         printf("Test %d failed. Res = %d expected %d\n", *test_nbr, res, expected);
     }
@@ -28,7 +28,7 @@ void test_sign(int *test_nbr, int res, int expected) {
 
 void test_char(int *test_nbr, char res, char expected) {
     if (res == expected) {
-        printf("Test %d passed\n", *test_nbr);
+        printf("Test %2d passed\n", *test_nbr);
     } else {
         printf("Test %d failed. Res = %d expected %d\n", *test_nbr, res, expected);
     }
@@ -37,7 +37,7 @@ void test_char(int *test_nbr, char res, char expected) {
 
 void test_str(int *test_nbr, char *res, char *expected) {
     if (strcmp(res, expected) == 0) {
-        printf("Test %d passed\n", *test_nbr);
+        printf("Test %2d passed\n", *test_nbr);
     } else {
         printf("Test %d failed. Res = %s expected %s\n", *test_nbr, res, expected);
     }
@@ -46,7 +46,7 @@ void test_str(int *test_nbr, char *res, char *expected) {
 
 void test_ptr(int *test_nbr, void *res, void *expected) {
     if (res == expected) {
-        printf("Test %d passed\n", *test_nbr);
+        printf("Test %2d passed\n", *test_nbr);
     } else {
         printf("Test %d failed. Res = %p expected %p\n", *test_nbr, res, expected);
     }
@@ -55,7 +55,7 @@ void test_ptr(int *test_nbr, void *res, void *expected) {
 
 void test_bool(int *test_nbr, bool res, bool expected) {
     if (res == expected) {
-        printf("Test %d passed\n", *test_nbr);
+        printf("Test %2d passed\n", *test_nbr);
     } else {
         printf("Test %d failed. Res = %s expected %s\n",
             *test_nbr, res ? "true" : "false",
