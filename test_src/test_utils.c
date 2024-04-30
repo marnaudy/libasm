@@ -9,6 +9,23 @@ void test_int(int *test_nbr, int res, int expected) {
     (*test_nbr)++;
 }
 
+int get_sign(int a) {
+    if (a >= 0) return 1;
+    if (a <= 0) return -1;
+    return 0;
+}
+
+void test_sign(int *test_nbr, int res, int expected) {
+    int sign_res = get_sign(res);
+    int exp_res = get_sign(expected);
+    if (sign_res == exp_res) {
+        printf("Test %d passed\n", *test_nbr);
+    } else {
+        printf("Test %d failed. Res = %d expected %d\n", *test_nbr, res, expected);
+    }
+    (*test_nbr)++;
+}
+
 void test_char(int *test_nbr, char res, char expected) {
     if (res == expected) {
         printf("Test %d passed\n", *test_nbr);

@@ -16,6 +16,7 @@
 #define LONG_STR_SIZE 10000
 
 void    test_int(int *test_nbr, int res, int expected);
+void    test_sign(int *test_nbr, int res, int expected);
 void    test_char(int *test_nbr, char res, char expected);
 void    test_str(int *test_nbr, char *res, char *expected);
 void    test_ptr(int *test_nbr, void *res, void *expected);
