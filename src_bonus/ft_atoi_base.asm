@@ -69,12 +69,12 @@ read_nb_next_char:
     inc     rdi
     jmp     read_nb_next_char
 end:
-    ; If sign (r9b) is set, negate rax
+    ; If sign (r9b) is set, negate eax
     cmp     r9b, 0
     jne     end_negative
     ret
-end_negative
-    neg     rax
+end_negative:
+    neg     eax
     ret
 
 is_whitespace:
