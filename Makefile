@@ -24,7 +24,7 @@ OBJS		=	${SRCS:.asm=.o}
 
 BONUS_OBJS	=	${BONUS_SRCS:.asm=.o}
 
-TEST_NAME	=	tester
+TEST_NAME	=	test
 
 TEST_HEADER	=	test_src/test.h
 
@@ -66,8 +66,6 @@ all:			${NAME}
 
 bonus:			${BONUS_NAME}
 
-test:			${TEST_NAME}
-
 ${NAME}:		${OBJS}
 				${AR} ${AR_FLAGS} ${NAME} ${OBJS}
 
@@ -91,4 +89,4 @@ fclean:			clean
 
 re:				fclean all
 
-.PHONY:			all bonus test clean fclean re 
+.PHONY:			all bonus clean fclean re 
